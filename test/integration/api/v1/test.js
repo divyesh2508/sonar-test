@@ -1,7 +1,9 @@
 const request = require('supertest');
 const express = require('express');
 const app = express();
-const testRoutes = require('/controllers/api/v1/test');
+// const testRoutes = require('/controllers/api/v1/test');
+const testRoutes = require('../../../../controllers/api/v1/test');
+
 
 app.use('/test', testRoutes);
 
