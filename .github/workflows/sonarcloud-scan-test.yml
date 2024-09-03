@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       
       - name: Change directory
-        run: cd /home/runner/work/sonar-test/sonar-test/app
+        run: cd /app
       - name: Install dependencies
         run: yarn
       - name: Test and coverage
