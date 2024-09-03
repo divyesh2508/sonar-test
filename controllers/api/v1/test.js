@@ -1,12 +1,6 @@
-const express = require('express'),
-  router = express.Router();
-
-router.get('/', (req, res) => {
-  const result = {};
-  result.empId = 'EMP-123';
-  result.empName = 'John';
-  res.status(200).json({ success: true, data: result });
+// controllers/api/v1/test.js
+describe('Example Test Suite', () => {
+  it('should have at least one test', () => {
+    expect(true).toBe(true);
+  });
 });
-
-module.exports = router;
-
