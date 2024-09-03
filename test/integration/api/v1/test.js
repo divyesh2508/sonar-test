@@ -5,7 +5,7 @@ const app = express();
 const testRoutes = require('../../../../controllers/api/v1/test');
 
 
-app.use('/test', testRoutes);
+app.use('/test', testRoutes); // Should be a valid middleware function
 
 describe('GET /test', () => {
   it('should return test route response', async () => {

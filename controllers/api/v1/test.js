@@ -1,6 +1,9 @@
-// controllers/api/v1/test.js
-describe('Example Test Suite', () => {
-  it('should have at least one test', () => {
-    expect(true).toBe(true);
-  });
+const express = require('express');
+const router = express.Router();
+
+// Define routes here
+router.get('/', (req, res) => {
+  res.send('Test route');
 });
+
+module.exports = router; // Ensure this is exported as a router
