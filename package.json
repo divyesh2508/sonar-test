@@ -4,7 +4,7 @@
   "description": "node js to do app",
   "main": "app.js",
   "scripts": {
-  "test": "jest --coverage",
+  "test": "jest ",
   "coverage": "jest --coverage --coverageReporters=lcov",
   "build": "babel src -d lib"
 },
