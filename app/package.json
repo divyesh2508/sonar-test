@@ -1,35 +1,39 @@
 {
-  "name": "sonarqube",
-  "version": "1.0.1",
-  "description": "Sonarqube setup with node app",
-  "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:VikashChoudahry/sonarqube-setup.git"
-  },
+  "name": "nodejstodo",
+  "version": "1.0.0",
+  "description": "node js to do app",
+  "main": "app.js",
   "scripts": {
-    "test": "mocha --timeout 30000 ./test/**/*.js --exit",
-    "coverage": "./node_modules/.bin/nyc -r cobertura -r text-summary -r html npm test",
-    "coverage-lcov": "./node_modules/.bin/nyc -r cobertura -r text-summary -r lcov npm test",
-    "start": "nodemon server.js",
-    "build": "webpack -p",
-    "lint": "./node_modules/.bin/eslint ."
+  "test": "jest --coverage",
+  "coverage": "jest --coverage --coverageReporters=lcov",
+  "build": "babel src -d lib"
+},
+  "jest": {
+    "testMatch": ["**/?(*.)+(spec|test).[tj]s?(x)"],
+    "testPathIgnorePatterns": ["/node_modules/"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": ["text", "lcov"]
   },
-  "author": "Vikash",
-  "license": "MIT",
+
+  "author": "Divyesh",
+  "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.5",
     "express": "^4.18.2",
-    "js-yaml": "^3.13.1"
+    "mongoose": "^5.11.7",
+    "rollbar": "^2.26.4"
   },
   "devDependencies": {
-    "chai": "4.1.2",
-    "dotenv": "5.0.1",
-    "eslint": "7.11.0",
-    "eslint-config-airbnb-base": "14.2.0",
-    "eslint-plugin-import": "2.22.1",
-    "mocha": "10.0.0",
-    "nock": "13.0.4",
-    "nyc": "15.1.0",
-    "supertest": "3.0.0"
+    "chai": "^4.3.4",
+    "mocha": "^10.7.0",
+    "sonarqube-scanner": "^4.0.1",
+    "supertest": "^7.0.0",
+     "jest": "^27.0.0"
   }
 }
